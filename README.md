@@ -13,24 +13,24 @@ Este é um projeto simples desenvolvido para a disciplina de Banco de Dados. O o
 
 ```
 
-locadora-filmes/
-├── src/
-│   └── main/
+locadora-filmes/<br>
+├── src/<br>
+│   └── main/<br>
 │       ├── java/
 │       │   └── com.example.locadora/<br>
-│       │       ├── LocadoraApplication.java
-│       │       ├── controller/
-│       │       │   └── FilmeController.java
-│       │       ├── entity/
-│       │       │   └── Filme.java
-│       │       ├── repository/
-│       │       │   └── FilmeRepository.java
-│       │       └── service/
-│       │           └── FilmeService.java
-│       └── resources/
-│           ├── application.properties
-│           └── data.sql (opcional)
-└── pom.xml
+│       │       ├── LocadoraApplication.java<br>
+│       │       ├── controller/<br>
+│       │       │   └── FilmeController.java<br>
+│       │       ├── entity/<br>
+│       │       │   └── Filme.java<br>
+│       │       ├── repository/<br>
+│       │       │   └── FilmeRepository.java<br>
+│       │       └── service/<br>
+│       │           └── FilmeService.java<br>
+│       └── resources/<br>
+│           ├── application.properties<br>
+│           └── data.sql (opcional)<br>
+└── pom.xml<br>
 
 ````
 
