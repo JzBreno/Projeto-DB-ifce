@@ -1,48 +1,41 @@
-Claro! Aqui está um modelo de `README.md` para seu projeto de **Locadora de Filmes**, com Spring Boot e banco H2:
-
----
-
-```markdown
 # 🎬 Locadora de Filmes - Mini Projeto (Spring Boot + H2)
 
-Este é um projeto simples desenvolvido para a disciplina de Banco de Dados. O objetivo é demonstrar as operações básicas de CRUD em uma aplicação backend feita em Java utilizando Spring Boot e banco de dados em memória H2.
+Este projeto foi desenvolvido para a disciplina de Banco de Dados e tem como objetivo demonstrar as operações básicas de CRUD em uma aplicação backend feita em Java, utilizando Spring Boot e banco de dados em memória H2.
 
 ---
 
 ## 📁 Estrutura do Projeto
 
 ```
-
-locadora-filmes/<br>
-├── src/<br>
-│   └── main/<br>
+locadora-filmes/
+├── src/
+│   └── main/
 │       ├── java/
-│       │   └── com.example.locadora/<br>
-│       │       ├── LocadoraApplication.java<br>
-│       │       ├── controller/<br>
-│       │       │   └── FilmeController.java<br>
-│       │       ├── entity/<br>
-│       │       │   └── Filme.java<br>
-│       │       ├── repository/<br>
-│       │       │   └── FilmeRepository.java<br>
-│       │       └── service/<br>
-│       │           └── FilmeService.java<br>
-│       └── resources/<br>
-│           ├── application.properties<br>
-│           └── data.sql (opcional)<br>
-└── pom.xml<br>
-
-````
+│       │   └── com/example/locadora/
+│       │       ├── LocadoraApplication.java
+│       │       ├── controller/
+│       │       │   └── FilmeController.java
+│       │       ├── entity/
+│       │       │   └── Filme.java
+│       │       ├── repository/
+│       │       │   └── FilmeRepository.java
+│       │       └── service/
+│       │           └── FilmeService.java
+│       └── resources/
+│           ├── application.properties
+│           └── data.sql (opcional)
+└── pom.xml
+```
 
 ---
 
 ## ⚙️ Tecnologias Utilizadas
 
-- Java 8 ou superior
-- Spring Boot
-- Spring Data JPA
-- H2 Database (em memória)
-- Maven
+* Java 8 ou superior
+* Spring Boot
+* Spring Data JPA
+* Banco de Dados H2 (em memória)
+* Maven
 
 ---
 
@@ -50,42 +43,40 @@ locadora-filmes/<br>
 
 ### Pré-requisitos
 
-- Java JDK 8+
-- Maven
+* Java JDK 8 ou superior
+* Maven instalado
 
-### Passos
+### Passos para rodar a aplicação
 
-1. Clone o repositório:
+1. Clone este repositório:
 
    ```bash
    git clone https://github.com/seu-usuario/locadora-filmes.git
    cd locadora-filmes
-````
+   ```
 
-2. Compile e execute a aplicação:
+2. Compile e inicie o projeto:
 
    ```bash
    mvn spring-boot:run
    ```
 
-3. Acesse o H2 Console:
+3. Acesse o console do banco H2 pelo navegador:
 
    * URL: `http://localhost:8080/h2-console`
    * JDBC URL: `jdbc:h2:mem:locadoradb`
-   * User: `sa`
-   * Password: (deixe em branco)
+   * Usuário: `sa`
+   * Senha: (deixe em branco)
 
-4. Teste os endpoints:
+4. Teste os endpoints REST usando ferramentas como [Postman](https://www.postman.com/) ou [Insomnia](https://insomnia.rest/):
 
-   Use ferramentas como [Postman](https://www.postman.com/) ou [Insomnia](https://insomnia.rest/) para enviar requisições HTTP.
-
-   Exemplos:
-
-   * `GET /filmes` → Listar todos
-   * `POST /filmes` → Criar novo
-   * `GET /filmes/{id}` → Buscar por ID
-   * `PUT /filmes/{id}` → Atualizar
-   * `DELETE /filmes/{id}` → Remover
+   | Método | Endpoint       | Descrição                   |
+   | ------ | -------------- | --------------------------- |
+   | GET    | `/filmes`      | Lista todos os filmes       |
+   | POST   | `/filmes`      | Cria um novo filme          |
+   | GET    | `/filmes/{id}` | Busca filme pelo ID         |
+   | PUT    | `/filmes/{id}` | Atualiza um filme existente |
+   | DELETE | `/filmes/{id}` | Remove um filme             |
 
 ---
 
@@ -109,6 +100,7 @@ spring.jpa.hibernate.ddl-auto=update
 ```java
 @Entity
 public class Filme {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -117,7 +109,7 @@ public class Filme {
     private String genero;
     private int anoLancamento;
 
-    // Getters e Setters...
+    // Getters e Setters
 }
 ```
 
@@ -125,24 +117,18 @@ public class Filme {
 
 ## 📌 Observações
 
-* A aplicação usa banco de dados em memória, ou seja, os dados somem quando a aplicação é encerrada.
-* O projeto segue a estrutura padrão: **Controller → Service → Repository → Entity**.
+* O banco de dados utilizado é em memória, portanto, todos os dados serão perdidos ao encerrar a aplicação.
+* A estrutura do projeto segue o padrão: **Controller → Service → Repository → Entity** para melhor organização do código.
 
 ---
 
 ## 👨‍🎓 Autor
 
-Projeto desenvolvido por **Breno Sousa** como parte da disciplina de Banco de Dados no IFCE.
+Projeto desenvolvido por **Breno Sousa** como parte da disciplina de Banco de Dados no Instituto Federal do Ceará (IFCE).
 
 ---
 
 ## 📃 Licença
 
-Uso educacional. Sem licença definida.
+Uso exclusivo para fins educacionais. Não há licença definida.
 
-```
-
----
-
-Se quiser, posso salvar esse conteúdo como um arquivo `.md` e te enviar também. Deseja isso?
-```
