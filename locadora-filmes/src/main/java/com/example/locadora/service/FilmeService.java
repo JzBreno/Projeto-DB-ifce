@@ -18,29 +18,34 @@ public class FilmeService {
         this.filmeRepository = filmeRepository;
     }
 
-    public void saveFilme(Filme filme){
-        try{
-            filmeRepository.save(filme);
-        }catch (Exception e){
-            log.error("Erro ao salvar filme: {}", e.getMessage());
+    public Filme saveFilme(Filme filme) {
+        try {
+            return filmeRepository.save(filme);
+        } catch (Exception e) {
+//            log.error("Erro ao salvar filme: {}", e.getMessage());
+            throw new RuntimeException("Erro ao salvar filme", e);
         }
     }
 
-    public Filme getFilmeByid(long id){
+    public Filme getFilmeByid(long id) {
         String message = String.format("Filme não encontrado, id: %d", id);
-        return filmeRepository.findById(id).orElseThrow(() -> new FilmeNotFoundException(message));
+        return filmeRepository.findById(id)
+                .orElseThrow(() -> new FilmeNotFoundException(message));
     }
 
-    public void deleteFilme(long id){
-        try{
+    public void deleteFilme(long id) {
+        try {
             Filme filme = getFilmeByid(id);
             filmeRepository.delete(filme);
+        } catch (FilmeNotFoundException e) {
+            throw e;
         } catch (Exception e) {
-            log.error("Erro ao deletar filme: {}", e.getMessage());
+//            log.error("Erro ao deletar filme: {}", e.getMessage());
+            throw new RuntimeException("Erro ao deletar filme", e);
         }
     }
 
-    public List<Filme> getAllFilmes(){
+    public List<Filme> getAllFilmes() {
         return filmeRepository.findAll();
     }
 }
