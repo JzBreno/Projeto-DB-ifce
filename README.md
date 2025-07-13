@@ -132,3 +132,5 @@ Projeto JAVA desenvolvido por **Breno Sousa**, **Marcos Iury**, **Liv**, **Letic
 
 Uso exclusivo para fins educacionais. Não há licença definida.
 
+Testes de POST, GET, DELETE, PUT
+<img width="1916" height="1029" alt="image" src="https://github.com/user-attachments/assets/2d3eb4c8-4d5c-4d6f-8158-20170848c85a" />
