@@ -17,7 +17,7 @@ locadora-filmes/
 ├── src/
 │   └── main/
 │       ├── java/
-│       │   └── com.example.locadora/
+│       │   └── com.example.locadora/<br>
 │       │       ├── LocadoraApplication.java
 │       │       ├── controller/
 │       │       │   └── FilmeController.java
