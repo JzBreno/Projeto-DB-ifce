@@ -122,9 +122,9 @@ public class Filme {
 
 ---
 
-## 👨‍🎓 Autor
+## 👨‍🎓 Autores
 
-Projeto desenvolvido por **Breno Sousa** como parte da disciplina de Banco de Dados no Instituto Federal do Ceará (IFCE).
+Projeto JAVA desenvolvido por **Breno Sousa**, **Marcos Iury**, **Liv**, **Leticia Barreto** como parte da disciplina de Banco de Dados no Instituto Federal do Ceará (IFCE).
 
 ---
 
