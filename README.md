@@ -83,14 +83,15 @@ locadora-filmes/
 ## 🗃️ Configuração do `application.properties`
 
 ```properties
-spring.datasource.url=jdbc:h2:mem:locadoradb
+spring.datasource.url=jdbc:h2:mem:locadora
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
 spring.datasource.password=
 spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 spring.h2.console.enabled=true
-spring.jpa.show-sql=true
+spring.h2.console.path=/h2-console
 spring.jpa.hibernate.ddl-auto=update
+management.endpoints.web.exposure.include=*
 ```
 
 ---
