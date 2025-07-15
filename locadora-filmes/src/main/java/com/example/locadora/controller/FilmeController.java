@@ -42,8 +42,10 @@ public class FilmeController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateFilme(@PathVariable long id, @RequestBody Filme filme) {
-        filme.setId(id);
-        filmeService.saveFilme(filme);
+        Filme filmesaved = filmeService.getFilmeByid(id);
+        filme.setId(filmesaved.getId());
+        deleteFilme(id);
+        saveFilme(filme);
         return ResponseEntity.ok().build();
     }
 }
