@@ -114,6 +114,67 @@ public class Filme {
 }
 ```
 
+## 🎟️ Funcionalidade de Aluguel de Filmes
+
+Além das operações de cadastro de filmes, o projeto também permite realizar o aluguel de filmes. Essa funcionalidade está disponível por meio da entidade `Aluguel`, que relaciona um conjunto de filmes alugados.
+
+### 📦 Endpoints de Aluguel
+
+| Método | Endpoint           | Descrição                                               |
+| ------ | ------------------ | ------------------------------------------------------- |
+| GET    | `/alugueis`        | Lista todos os aluguéis cadastrados                     |
+| POST   | `/alugueis`        | Cria um novo aluguel com **todos os filmes do sistema** |
+| POST   | `/alugueis/filmes` | Cria um novo aluguel com base nos **IDs de filmes**     |
+| DELETE | `/alugueis/{id}`   | Remove um aluguel pelo ID                               |
+
+### ✅ Exemplo de POST via Postman (alugar filmes por ID)
+
+**Endpoint**:
+
+```
+POST http://localhost:8080/alugueis/filmes
+```
+
+**Corpo da Requisição (JSON)**:
+
+```json
+{
+  "filmeIds": [1, 2, 3]
+}
+```
+
+> ⚠️ Os filmes referenciados pelos IDs devem já existir no banco.
+
+---
+
+### 🗂️ Modelo da Entidade `Aluguel`
+
+```java
+@Entity
+public class Aluguel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToMany
+    @JoinTable(
+        name = "aluguel_filme",
+        joinColumns = @JoinColumn(name = "aluguel_id"),
+        inverseJoinColumns = @JoinColumn(name = "filme_id")
+    )
+    private List<Filme> filmes;
+}
+```
+
+---
+
+### 💡 Observações
+
+* O aluguel armazena a relação com os filmes alugados por meio de uma tabela intermediária.
+* Você pode alugar todos os filmes cadastrados com um único POST em `/alugueis`.
+* Para alugar filmes específicos, envie uma lista de IDs usando o endpoint `/alugueis/filmes`.
+
 ---
 
 ## 📌 Observações
